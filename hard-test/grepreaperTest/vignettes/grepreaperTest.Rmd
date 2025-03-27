@@ -1,0 +1,78 @@
+Yes, we can improve the vignette by making it more structured, informative, and visually appealing. Here’s an improved version with clearer explanations, examples, and formatting:
+
+---
+
+```rmd
+---
+title: "Using grepreaperTest"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using grepreaperTest}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Introduction
+
+The `grepreaperTest` package provides a simple and efficient way to count rows in CSV files that match a specific pattern using the `grep` command and `fread()` from the `data.table` package. This is particularly useful for processing large datasets where pattern matching needs to be fast.
+
+---
+
+# Installation
+
+To install the package after building it, run:
+
+```r
+devtools::install()
+```
+
+To load the package:
+
+```r
+library(grepreaperTest)
+```
+
+---
+
+# Basic Usage
+
+## Example 1: Counting Rows with a Specific Pattern
+
+Suppose you have a dataset containing diamond quality ratings and want to count how many rows contain the pattern `"VS"`.
+
+### **Step 1: Prepare a CSV File**
+First, create a sample CSV file:
+
+```r
+library(data.table)
+fwrite(ggplot2::diamonds, "diamonds.csv")
+```
+
+### **Step 2: Use `grep_count()` to Count Matching Rows**
+Now, use the `grep_count()` function:
+
+```r
+count <- grep_count("VS", "diamonds.csv")
+print(count)  # Should return a positive count
+```
+
+---
+
+## Example 2: Case-Insensitive Search
+
+You can also perform a case-insensitive search:
+
+```r
+count <- grep_count("vs", "diamonds.csv", ignore_case = TRUE)
+print(count)
+```
+
+---
+
