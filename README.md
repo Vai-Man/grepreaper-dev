@@ -12,7 +12,7 @@ library(data.table)
 
 data(diamonds)
 
-mr <- grep("VS", diamonds$clarity)  # Identify matching rows
+mr <- grep("VS", diamonds$clarity)
 count <- length(mr)
 
 print(count)
@@ -25,9 +25,9 @@ Count matching rows by integrating `grep` with `fread()`:
 ```r
 library(data.table)
 
-fwrite(diamonds, "diamonds.csv")  # Save dataset to file
+fwrite(diamonds, "diamonds.csv")
 
-filtered_data <- fread(cmd = "grep 'VS' diamonds.csv")  # Apply pattern matching
+filtered_data <- fread(cmd = "grep 'VS' diamonds.csv")
 count <- nrow(filtered_data)
 
 print(count)
