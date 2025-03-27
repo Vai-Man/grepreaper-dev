@@ -46,7 +46,7 @@ The `hard-test/grepreaperTest` directory contains an R package with:
 To install the package from this repository, use:  
 
 ```r
-devtools::install_github("vai-man/grepreaper-dev", subdir = "hard-test/grepreaperTest", build_vignettes = TRUE)
+devtools::install_github("vai-man/grepreaper-dev", subdir = "hard-test/grepreaperTest")
 ```
 
 After installation, load the package:  
