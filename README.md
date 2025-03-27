@@ -1,5 +1,7 @@
 ## **Tests**  
 
+Output screenshots for the easy and medium tests have been added to their respective folders. For the hard test, a screenshot showing the function being loaded and executed has been included.
+
 ### **Easy Test: Using `grep()` in R**  
 
 Count rows that match `"VS"` in the `diamonds` dataset:  
